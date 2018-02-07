@@ -4,6 +4,8 @@ import os
 import string
 import math
 
+print type(1)
+
 print os.environ
 os.system("ls -al")
 a = "hello"
