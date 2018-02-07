@@ -21,6 +21,7 @@ def main():
     parser.add_argument("-o", help="Save to file", action="store_true")
     parser.add_argument("-v", "--verbose", help="Print the process", action="store_true")
     args = parser.parse_args()
+    print(type(args))
     print_fib(args.length, args.verbose, args.o)
 
 

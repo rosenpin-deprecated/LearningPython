@@ -11,14 +11,14 @@ atexit.register(lambda: s.close())
 try:
     while True:
         (connection, addr) = s.accept()
-        print "connected to ", addr
+        print("connected to ", addr)
         command = str(connection.recv(1000)).split(" ")
         if command[0] != "GET":
             connection.sendall("Only GET pls :)")
             connection.close()
         else:
             path = os.getcwd() + command[1].split("\\")[0]
-            print "file to open %s" % path
+            print("file to open %s" % path)
             if os.path.isfile(path):
                 f = open(path).read()
                 response = "HTTP/1.0 200 Document Follows\n" + "Content-length:" + str(len(f)) + "\n\n" + f
